@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!-- Lang declares language of website. -->
+<html lang="en-US">
+  <head>
+    <!-- Meta provides information about HTML document. -->
+    <meta
+      name="description"
+      content="This page tabulates what my first name is in other languages."
+    />
+    <meta name="keywords" content="first name, languages" />
+    <meta name="author" content="Stefan Kasperzack" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title is displayed in tab label of browser. -->
+    <title>My first name in multiple languages</title>
+    <!-- Adds favicon image to tab. -->
+    <link rel="icon" type="image/png" href="images/favicon/favicon.png" />
+    <!-- Adds external CSS style sheet. -->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!-- Adds external JavaScript file. -->
+    <script src="javascript/main.js"></script>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header class="grid-header">
+        <div>
+          <img
+            title="Tooltip: Around the world"
+            src="images/first-name/around_the_world.jpg"
+            alt="Around the world"
+            width="1000"
+            height="300"
+          />
+        </div>
+      </header>
+
+      <!-- Navigation bar. -->
+      <nav class="grid-nav">
+        <ul>
+          <li><a href="index.html">About me</a></li>
+          <li><a href="reading.html">Reading</a></li>
+          <li>
+            <a class="active-page" href="first-name.html"
+              >First name - multilingual</a
+            >
+          </li>
+          <li><a href="js-interaction.html">JavaScript interaction</a></li>
+          <li>
+            <a href="./vue-app/dist/index.html">Vue pets</a>
+          </li>
+          <li>
+            <a href="give-feedback-db.html">Give feedback</a>
+          </li>
+          <li>
+            <a href="contact-me.html">Contact me</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="grid-main no-horizontal-scrollbar-main">
+        <!-- noscript content is only displayed if JavaScript is disabled. -->
+        <noscript>
+          <strong
+            >I am sorry but this page does not work properly without JavaScript
+            enabled. Please enable it to continue.</strong
+          >
+        </noscript>
+        <h1>My first name in multiple languages</h1>
+        <section>
+          <h2>Table first name in multiple languages</h2>
+          <!-- 
+            th: header, 
+            tr: row, 
+            td: cell;
+            thead (optional): to help screen readers distinguish between head and body.
+            tbody (optional): to help screen readers distinguish between head and body.
+          -->
+          <div class="table-container">
+            <table>
+              <caption>
+                <b>First name in Germanic and Romance languages</b>
+              </caption>
+              <thead>
+                <tr>
+                  <th>English</th>
+                  <th>German</th>
+                  <th>Dutch</th>
+                  <th>Latin</th>
+                  <th>French</th>
+                  <th>Italian</th>
+                  <th>Spanish</th>
+                  <th>Catalan</th>
+                  <th>Portuguese</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Stephen</td>
+                  <td>Stefan</td>
+                  <td>Steven</td>
+                  <td>Stephanus</td>
+                  <td>Étienne</td>
+                  <td>Stefano</td>
+                  <td>Esteban</td>
+                  <td>Esteve</td>
+                  <td>Estêvão</td>
+                </tr>
+                <tr>
+                  <td>William</td>
+                  <td>Wilhelm</td>
+                  <td>Wim</td>
+                  <td>Gulielmus</td>
+                  <td>Guillaume</td>
+                  <td>Guglielmo</td>
+                  <td>Guillermo</td>
+                  <td>Guillem</td>
+                  <td>Guilherme</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section>
+          <h2>How Stefan is pronounced in German</h2>
+          <audio controls>
+            <source src="audio/pronunciation_stefan.mp3" type="audio/mpeg" />
+            Audio cannot be played in this browser.
+          </audio>
+        </section>
+      </main>
+
+      <!-- Footer is inserted via JavaScript. -->
+      <footer class="grid-footer"></footer>
+    </div>
+  </body>
+</html>

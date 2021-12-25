@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- Lang declares language of website. -->
+<html lang="en-US">
+  <head>
+    <!-- Meta provides information about HTML document. -->
+    <meta
+      name="description"
+      content="This page lists which books I would like to read."
+    />
+    <meta name="keywords" content="books, reading" />
+    <meta name="author" content="Stefan Kasperzack" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title is displayed in tab label of browser. -->
+    <title>Books I want to read</title>
+    <!-- Adds favicon image to tab. -->
+    <link rel="icon" type="image/png" href="images/favicon/favicon.png" />
+    <!-- Adds external CSS style sheet. -->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!-- Adds external JavaScript file. -->
+    <script src="javascript/main.js"></script>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header class="grid-header">
+        <div>
+          <img
+            title="Tooltip: Library"
+            src="images/reading/library.jpg"
+            alt="Library"
+            width="1000"
+            height="300"
+          />
+        </div>
+      </header>
+
+      <!-- Navigation bar. -->
+      <nav class="grid-nav">
+        <ul>
+          <li><a href="index.html">About me</a></li>
+          <li>
+            <a class="active-page" href="reading.html">Reading</a>
+          </li>
+          <li>
+            <a href="first-name.html">First name - multilingual</a>
+          </li>
+          <li><a href="js-interaction.html">JavaScript interaction</a></li>
+          <li>
+            <a href="./vue-app/dist/index.html">Vue pets</a>
+          </li>
+          <li>
+            <a href="give-feedback-db.html">Give feedback</a>
+          </li>
+          <li>
+            <a href="contact-me.html">Contact me</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="grid-main">
+        <!-- noscript content is only displayed if JavaScript is disabled. -->
+        <noscript>
+          <strong
+            >I am sorry but this page does not work properly without JavaScript
+            enabled. Please enable it to continue.</strong
+          >
+        </noscript>
+        <h1>Reading</h1>
+        <section>
+          <h2>Books I want to read</h2>
+          <!-- 
+            ul: Displays an unordered list (uses bullet points). 
+            li: List item.
+            b: bold. Or semantic version: <strong>.
+            i: cursive. Or semantic version: <em>.
+          -->
+          <ul>
+            <li><strong>East of Eden</strong> <em>by John Steinbeck</em></li>
+            <li><strong>The Stranger</strong> <em>by Albert Camus</em></li>
+            <li><strong>Life and Fate</strong> <em>by Vasily Grossman</em></li>
+            <li><strong>1984</strong> <em>by George Orwell</em></li>
+            <li>
+              <strong>The Death of Ivan Ilyich</strong> <em>by Leo Tolstoy</em>
+            </li>
+            <li><strong>Night</strong> <em>by Elie Wiesel</em></li>
+            <li>
+              <strong>One Day in the Life of Ivan Denisovich</strong>
+              <em>by Alexander Issajewitsch Solschenizy</em>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Reading is exciting</h2>
+          <p>
+            I like reading because reading arouses emotions and surprises. Like
+            the video clip below:
+          </p>
+          <video controls>
+            <source
+              src="videos/reading/emotions-surprise.mp4"
+              type="video/mp4"
+            />
+            Video cannot be viewed in this browser.
+          </video>
+        </section>
+
+        <section>
+          <br />
+          <h2>Ambient music for reading</h2>
+          <div class="youtube-video-container">
+            <iframe
+              src="https://www.youtube.com/embed/sjkrrmBnpGE"
+              title="YouTube - ambient music"
+            >
+            </iframe>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer is inserted via JavaScript -->
+      <footer class="grid-footer"></footer>
+    </div>
+  </body>
+</html>

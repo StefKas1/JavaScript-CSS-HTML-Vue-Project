@@ -1,0 +1,333 @@
+/* ######################## Default settings for entire website ######################## */
+/* Defines color scheme using CSS variables. */
+:root {
+  --color-very-light-red: #ffdddd;
+  --color-light-red: #ff5e6b;
+  --color-red: #f20f22;
+  --color-very-light-green: #e1ffdd;
+  --color-green: #009908;
+  --color-white: #ffffff;
+  --color-very-light-gray: #fafafa;
+  --color-light-gray: #e7e6e6;
+  --color-gray: #bebebe;
+  --color-dark-gray: #313131;
+  --color-black: #000000;
+}
+/* First font is used; should browser not be able to use font, second font is used. And so on. */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+noscript {
+  font-size: 2.5em;
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+main p {
+  text-align: justify; /* Text runs from left to right margin. */
+  border-left: 3px solid var(--color-red);
+  padding-left: 10px;
+  background-color: var(--color-very-light-gray);
+}
+figcaption {
+  text-align: center; /* Centers figure captions (here of the images). */
+}
+.button {
+  color: var(--color-white); /* Text color. */
+  font-weight: bold;
+  display: block; /* Displays element as block (inline would be a bit small). */
+  padding: 10px 10px; /* Height, width. */
+  background-color: var(--color-red);
+  border: 2px solid var(--color-red);
+  transition-duration: 0.5s; /* Will take 0.5 sec. to transition from button{} to button:hover{}. */
+}
+.button:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+.grid-nav {
+  border-right: 1px solid var(--color-light-gray);
+}
+.grid-main {
+  border: 1px solid var(--color-light-gray);
+  padding: 10px;
+}
+main img {
+  width: 100%;
+  height: auto; /* Maintains aspect ratio. */
+}
+video {
+  width: 100%;
+  height: auto;
+}
+/* Above does not work for iframe - must therefore first create a container. */
+.youtube-video-container {
+  position: relative; /* Positions relative to its normal position. */
+  padding-bottom: 56.25%; /* 16:9. */
+}
+.youtube-video-container iframe {
+  position: absolute; /* Positions based on parent position - based on "youtube-video-container". */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* Prevents horizontal scrollbar from being added to this class (box). */
+.no-horizontal-scrollbar-main {
+  overflow-x: hidden;
+}
+/* Adds horizontal scrollbar to table container if table (container) is no longer readable. */
+.table-container {
+  overflow-x: auto;
+}
+footer {
+  background-color: var(--color-light-gray);
+  padding: 10px;
+  width: 100%;
+}
+
+/* ######################## Navigation bar ######################## */
+nav {
+  width: 100%; /* So that there is no gap between nav bar and left and right edge of display. */
+}
+/* nav ul applies CSS to all ul tags inside nav tag. */
+nav ul {
+  list-style-type: none; /* Removes bullet points. */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Does not show overflowing text. */
+  background-color: var(--color-dark-gray);
+}
+nav li {
+  display: block; /* Displays list items one below the other. */
+}
+nav a {
+  display: block; /* Displays element as block (inline would be too small). */
+  color: var(--color-white); /* Text color. */
+  padding: 15px 15px; /* Height, width. */
+  text-decoration: none; /* Does not underline links. */
+}
+/* HTML element that belongs to this class (.active-page) is colored red. Since only the link that
+leads to active page belongs to this class, only the link to the active page is colored red in the 
+navigation bar. */
+.active-page {
+  background-color: var(--color-red);
+}
+/* Mouse hover changes color to light red, but only if class name is not "active-page".*/
+li a:hover:not(.active-page) {
+  background-color: var(--color-light-red);
+}
+
+/* ######################## Form and form validation ######################## */
+/* Applies only to input of type text, and textarea. */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px 10px; /* Height, width. */
+  margin: 10px 0px;
+  display: inline-block; /* Displays items one below the other. */
+  border: 1px solid var(--color-light-gray);
+  border-radius: 5px; /* Slightly rounded text input field corners. */
+  box-sizing: border-box; /* So that input fields do not overlap fieldset. */
+}
+/* Adds further ​​properties and values to input[type="text"] (and textarea) for invalid and valid 
+text input fields. Whether invalid or valid is checked via JavaScript with event listeners. */
+input[type="text"]:invalid,
+textarea:invalid {
+  border-color: var(--color-red);
+  background-color: var(--color-very-light-red);
+}
+input[type="text"]:valid,
+textarea:valid {
+  border-color: var(--color-green);
+  background-color: var(--color-very-light-green);
+}
+#first-name-invalid,
+#last-name-invalid,
+#email-invalid,
+#message-invalid {
+  color: var(--color-red);
+  border-left: 3px solid var(--color-red);
+}
+#first-name-valid,
+#last-name-valid,
+#email-valid,
+#message-valid {
+  color: var(--color-green);
+  border-left: 3px solid var(--color-green);
+}
+
+/* ######################## Table ######################## */
+table {
+  border-collapse: collapse; /* To get a thin border. */
+  width: 100%;
+}
+/* th: header; td: cell. */
+table th,
+table td {
+  border: 1px solid var(--color-gray);
+  padding: 10px; /* Creates padding (gap) between border and text. */
+}
+table th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  background-color: var(--color-red);
+  color: var(--color-white); /* Text color. */
+}
+/* Sets color of every 2nd tr (row) - in tbody. */
+table tr:nth-child(even) {
+  background-color: var(--color-very-light-gray);
+}
+/* Mouse hover changes color to light red. */
+table tr:hover {
+  background-color: var(--color-light-red);
+}
+
+/* ############### Grid layout (header, nav, main, footer) - and @media screen. ############### */
+/* Page layout is defined using the grid layout. */
+/* Defines grid-area to use grid-template-areas (see .grid-container) to arrange elements in grid.*/
+.grid-header {
+  grid-area: header-handle;
+}
+.grid-nav {
+  grid-area: nav-handle;
+}
+.grid-main {
+  grid-area: main-handle;
+}
+.grid-footer {
+  grid-area: footer-handle;
+}
+
+/* Grid layout for small displays, e.g., smartphones. */
+.grid-container {
+  display: grid;
+  gap: 20px;
+  /* To use 'grid-template-areas', the 'gird-area' must be defined for each class (see above).
+  For example, if class "my-header" is named h (grid-area: h), class my-main m (grid-area: m) and 
+  class my-footer f (grid-area: f) - and the grid layout consists of 3 rows and 4 columns
+  (grid-template-rows: repeat(3, 1fr); (grid-template-columns: repeat(4, 1fr);), then 
+  'gird-template-areas' could be defined as follows:
+  "h h h h"
+  "m m m m"
+  "f f f f"
+  That would mean that my-header spans the entire row, as well as my-main and my-footer.
+  A dot . can also be inserted, which means that this cell of the grid remains empty.
+  And the arrangement of the elements in the grid must always be a square or a rectangle, e.g.,
+  "h h m m"
+  "h h m m"
+  "f f f f"
+  otherwise the grid layout cannot display the grid correctly.
+  Note, new classes and gird areas can be defined and inserted into grid and arranged as desired. */
+  /* Named elements are displayed one below the other. */
+  grid-template-areas:
+    "header-handle"
+    "nav-handle"
+    "main-handle"
+    "footer-handle";
+}
+/* Applies to all screen widths <= 500px. */
+@media screen and (max-width: 500px) {
+  header img {
+    width: 100%;
+    height: auto; /* Maintains aspect ratio. */
+  }
+}
+
+/* Grid layout for medium displays, e.g., tablets.
+Applies to all screen widths >= 500px and <= 800px. */
+@media screen and (min-width: 500px) and (max-width: 800px) {
+  .grid-container {
+    /* Named elements are still displayed one below the other. */
+    grid-template-areas:
+      "header-handle"
+      "nav-handle"
+      "main-handle"
+      "footer-handle";
+  }
+  nav li {
+    float: left; /* Displays list items side by side. */
+  }
+  header img {
+    width: 100%;
+    height: auto; /* Maintains aspect ratio. */
+  }
+}
+
+/* Grid layout for large displays, e.g., computer screens.
+Applies to all screen widths >= 800px. */
+@media screen and (min-width: 800px) {
+  .grid-container {
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-areas:
+      "header-handle header-handle header-handle"
+      "nav-handle main-handle ."
+      "nav-handle main-handle ."
+      "footer-handle footer-handle footer-handle";
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column; /* Displays items one below the other. */
+  }
+  /* Maintains aspect ratio of image while image uses entire width. */
+  header img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+  }
+}
+
+/* Defines print version. */
+@media print {
+  * {
+    font-family: "times new roman", times, serif; /* Serif typeface is easier to read on paper. */
+    text-align: justify;
+  }
+  video,
+  .youtube-video-container {
+    display: none; /* Does not print videos and YouTube elements. */
+  }
+  main img {
+    width: 300px;
+    height: 300px;
+  }
+  table th {
+    color: var(--color-black); /* Text color. */
+  }
+  main p {
+    border-left: 3px solid var(--color-black);
+  }
+  figure {
+    float: left;
+  }
+  .button {
+    border: 2px solid var(--color-black);
+    color: var(--color-black);
+  }
+  #submit-button {
+    border: 2px solid var(--color-black);
+    color: var(--color-black);
+  }
+  /* So the form is black and white when printing. */
+  input[type="text"]:invalid,
+  #message {
+    border-color: var(--color-black);
+    background-color: var(--color-black);
+  }
+  input[type="text"]:valid,
+  #message {
+    border-color: var(--color-black);
+    background-color: var(--color-black);
+  }
+  #first-name-invalid,
+  #last-name-invalid,
+  #email-invalid,
+  #message-invalid,
+  #first-name-valid,
+  #last-name-valid,
+  #email-valid,
+  #message-valid {
+    color: var(--color-black);
+    border-left: 3px solid var(--color-black);
+  }
+}

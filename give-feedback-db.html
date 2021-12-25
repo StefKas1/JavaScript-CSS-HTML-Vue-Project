@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!-- Lang declares language of website. -->
+<html lang="en-US">
+  <head>
+    <!-- Meta provides information about HTML document. -->
+    <meta
+      name="description"
+      content="A feedback form that is connected to a MongoDB."
+    />
+    <meta name="keywords" content="form, submission, feedback, mongodb" />
+    <meta name="author" content="Stefan Kasperzack" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title is displayed in tab label of browser. -->
+    <title>Sending a feedback form to a MongoDB</title>
+    <!-- Adds favicon image to tab. -->
+    <link rel="icon" type="image/png" href="images/favicon/favicon.png" />
+    <!-- Adds external CSS style sheet. -->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!-- Adds external JavaScript file. -->
+    <script src="javascript/give-feedback-db.js"></script>
+    <script src="javascript/main.js"></script>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header class="grid-header">
+        <div>
+          <img
+            title="Tooltip: network"
+            src="images/give-feedback-db/give-feedback-db.jpg"
+            alt="Nodes and edges of a communication network"
+            width="1000"
+            height="300"
+          />
+        </div>
+      </header>
+
+      <!-- Navigation bar. -->
+      <nav class="grid-nav">
+        <ul>
+          <li><a href="index.html">About me</a></li>
+          <li><a href="reading.html">Reading</a></li>
+          <li>
+            <a href="first-name.html">First name - multilingual</a>
+          </li>
+          <li><a href="js-interaction.html">JavaScript interaction</a></li>
+          <li>
+            <a href="./vue-app/dist/index.html">Vue pets</a>
+          </li>
+          <li>
+            <a class="active-page" href="give-feedback-db.html"
+              >Give feedback</a
+            >
+          </li>
+          <li>
+            <a href="contact-me.html">Contact me</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="grid-main">
+        <!-- noscript content is only displayed if JavaScript is disabled. -->
+        <noscript>
+          <strong
+            >I am sorry but this page does not work properly without JavaScript
+            enabled. Please enable it to continue.</strong
+          >
+        </noscript>
+        <h1>Give feedback and interact with MongoDB</h1>
+        <section>
+          <h2>Give feedback</h2>
+          <!-- Form attributes action and method were deliberately not set, 
+            everything is handled via JavaScript.-->
+          <!-- onsubmit..., so that page is not refreshed after clicking submit button. -->
+          <form name="submit-form" onsubmit="return false">
+            <!-- Radio buttons. 
+            To group radio buttons, they must have the same value for the name attribute. -->
+            <fieldset id="like">
+              <legend>Do you like this website?</legend>
+              <input
+                type="radio"
+                id="yes"
+                name="group-like"
+                value="yes"
+                required
+              />
+              <label for="yes">Yes</label><br />
+              <input
+                type="radio"
+                id="unsure"
+                name="group-like"
+                value="unsure"
+              />
+              <label for="unsure">Unsure</label><br />
+              <input type="radio" id="no" name="group-like" value="no" />
+              <label for="no">No</label>
+            </fieldset>
+            <fieldset id="favorite">
+              <legend>Which page do you like the most?</legend>
+              <input
+                type="radio"
+                id="about-me"
+                name="group-favorite"
+                value="about-me"
+                required
+              />
+              <label for="about-me">About me</label><br />
+              <input
+                type="radio"
+                id="reading"
+                name="group-favorite"
+                value="reading"
+              />
+              <label for="reading">Reading</label><br />
+              <input
+                type="radio"
+                id="first-name-multilingual"
+                name="group-favorite"
+                value="first-name-multilingual"
+              />
+              <label for="first-name-multilingual"
+                >First name - multilingual</label
+              ><br />
+              <input
+                type="radio"
+                id="javascript-interaction"
+                name="group-favorite"
+                value="javascript-interaction"
+              />
+              <label for="javascript-interaction">JavaScript interaction</label
+              ><br />
+              <input
+                type="radio"
+                id="give-feedback"
+                name="group-favorite"
+                value="give-feedback"
+              />
+              <label for="give-feedback">Give feedback</label><br />
+              <input
+                type="radio"
+                id="contact-me"
+                name="group-favorite"
+                value="contact-me"
+              />
+              <label for="contact-me">Contact me</label><br />
+              <input
+                type="radio"
+                id="none"
+                name="group-favorite"
+                value="none"
+              />
+              <label for="none">None</label><br />
+            </fieldset>
+            <!-- Submit button. -->
+            <input
+              class="button"
+              id="submit-button"
+              type="submit"
+              value="Submit"
+            />
+          </form>
+        </section>
+        <section>
+          <h2>Feedback that is stored in MongoDB</h2>
+          <div id="insert-table"></div>
+        </section>
+      </main>
+
+      <!-- Footer is inserted via JavaScript. -->
+      <footer class="grid-footer"></footer>
+    </div>
+  </body>
+</html>

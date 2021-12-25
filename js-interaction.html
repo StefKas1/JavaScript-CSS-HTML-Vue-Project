@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!-- Lang declares language of website. -->
+<html lang="en-US">
+  <head>
+    <!-- Meta provides information about HTML document. -->
+    <meta
+      name="description"
+      content="This page allows to interact with JavaScript."
+    />
+    <meta name="keywords" content="JavaScript, adding, numbers" />
+    <meta name="author" content="Stefan Kasperzack" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title is displayed in tab label of browser. -->
+    <title>JavaScript interaction</title>
+    <!-- Adds favicon image to tab. -->
+    <link rel="icon" type="image/png" href="images/favicon/favicon.png" />
+    <!-- Adds external CSS style sheet. -->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!-- Adds external JavaScript file. -->
+    <script src="javascript/js-interaction.js"></script>
+    <script src="javascript/main.js"></script>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header class="grid-header">
+        <div>
+          <img
+            id="js-coffee-mug"
+            title="Tooltip: JavaScript"
+            src="images/js-interaction/js-interaction.jpg"
+            alt="Falling coffee mug on which JS is written"
+            width="1000"
+            height="300"
+          />
+        </div>
+      </header>
+
+      <!-- Navigation bar. -->
+      <nav class="grid-nav">
+        <ul>
+          <li><a href="index.html">About me</a></li>
+          <li><a href="reading.html">Reading</a></li>
+          <li><a href="first-name.html">First name - multilingual</a></li>
+          <li>
+            <a class="active-page" href="js-interaction.html"
+              >JavaScript interaction</a
+            >
+          </li>
+          <li>
+            <a href="./vue-app/dist/index.html">Vue pets</a>
+          </li>
+          <li>
+            <a href="give-feedback-db.html">Give feedback</a>
+          </li>
+          <li>
+            <a href="contact-me.html">Contact me</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="grid-main">
+        <!-- noscript content is only displayed if JavaScript is disabled. -->
+        <noscript>
+          <strong
+            >I am sorry but this page does not work properly without JavaScript
+            enabled. Please enable it to continue.</strong
+          >
+        </noscript>
+        <h1>Interact with JavaScript</h1>
+        <section>
+          <h2>1. Simple addition</h2>
+          <button class="button" type="button" onclick="mainAddTwoNumbers()">
+            Start simple addition
+          </button>
+        </section>
+
+        <section>
+          <h2>2. Hide or show explanation of pages</h2>
+          <div id="explanations">
+            <h3>GitHub repository</h3>
+            <p>
+              GitHub repository link to this website:
+              <a
+                href="https://github.com/StefKas1/Web-Application"
+                target="_blank"
+                >https://github.com/StefKas1/Web-Application</a
+              >
+            </p>
+            <h3>All pages contain HTML, CSS, and JavaScript</h3>
+            <p>
+              This is an HTML, CSS, and JavaScript project - the frontend was
+              implemented without frameworks (with the exception of the page
+              <strong>'Vue pets'</strong>, which was implemented with the Vue.js
+              framework to show Vue.js functionality). And in the backend,
+              hosted on Heroku, the Express.js framework was used for Node.js to
+              connect the frontend to a MongoDB. The goal of this project is to
+              tell something about myself and to showcase what I learned in the
+              course Web Application Development at BU.
+            </p>
+            <h3>
+              Content of each page</h3>
+            <p>
+              The web page <strong>'About me'</strong> provides general
+              information about me and shows images of the region where I live.
+            </p>
+            <p>
+              The <strong>'Reading'</strong> page gives a short list of books I
+              would like to read.
+            </p>
+            <p>
+              The <strong>'First name - multilingual'</strong> page shows how my
+              first name is spelled in Germanic and Romance languages and
+              contains an audio recording of how my name is pronounced in
+              German.
+            </p>
+            <p>
+              This <strong>'JavaScript interaction'</strong> page contains three
+              interactive JavaScript applications: the first application uses
+              alert and prompt windows to add two numbers (with input
+              validation). The second application hides or shows explanations
+              about the pages of this website. And the third application fetches
+              information from the NASA API and displays the information on the
+              page.
+            </p>
+            <p>
+              The page <strong>'Vue pets'</strong> shows four images of our
+              pets. Hovering over an image will change the image to an image of
+              the same pet – when it was younger. And the page contains a few
+              small interactions via input elements. The page was created with
+              Vue.js.
+            </p>
+            <p>
+              The <strong>'Give feedback'</strong> page enables the user to send
+              feedback via form elements to Express.js / Node.js, which is
+              hosted on Heroku, where the feedback (in JSON format) is inserted
+              into a MongoDB. All feedback is loaded from the MongoDB and
+              displayed on the <strong>'Give feedback'</strong> page, where
+              every feedback element in the MongoDB can be deleted.
+            </p>
+            <p>
+              The <strong>'Contact me'</strong> page contains a contact form
+              which the user can use to send a message to
+              <a href="mailto:kasperza@bu.edu">kasperza@bu.edu</a> using the
+              POST method; before the web form is sent, its entries are
+              validated via JavaScript. For sending, the message is first sent
+              to
+              <a href="https://formsubmit.co/" target="_blank">formsubmit.co</a
+              >, which sends the message to
+              <a href="mailto:kasperza@bu.edu">kasperza@bu.edu</a>. And all
+              pages were implemented with the CSS Grid Layout and media queries
+              so that the positioning of the HTML elements is adapted to the
+              display dimensions (responsiveness).
+            </p>
+          </div>
+          <button
+            id="hide-show-button"
+            class="button"
+            type="button"
+            onclick="mainHideShow()"
+          >
+            Hide explanation
+          </button>
+        </section>
+
+        <section>
+          <h2>3. NASA's astronomy picture of the day</h2>
+          <p>
+            I have loved everything to do with astronomy since I was a child. I
+            have looked at interactive deep space maps for hundreds of hours,
+            probably know every crater on the moon, and have more telescopes
+            than space in my apartment. Astronomy is so fantastic that when the
+            sky is clear, I can gaze into the starry sky and vastness of space
+            for hours. And when I found out that NASA offers a free API for
+            their data, of course I had to build that into my portfolio.
+          </p>
+          <div id="nasa-information"></div>
+          <button class="button" type="button" onclick="mainNasaImage()">
+            Get astronomy picture of the day
+          </button>
+        </section>
+      </main>
+
+      <!-- Footer is inserted via JavaScript -->
+      <footer class="grid-footer"></footer>
+    </div>
+  </body>
+</html>

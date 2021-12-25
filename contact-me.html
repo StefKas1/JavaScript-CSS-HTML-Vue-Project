@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- Lang declares language of website. -->
+<html lang="en-US">
+  <head>
+    <!-- Meta provides information about HTML document. -->
+    <meta name="description" content="This form can be used to contact me." />
+    <meta name="keywords" content="form, submission, contact" />
+    <meta name="author" content="Stefan Kasperzack" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title is displayed in tab label of browser. -->
+    <title>Contact form</title>
+    <!-- Adds favicon image to tab. -->
+    <link rel="icon" type="image/png" href="images/favicon/favicon.png" />
+    <!-- Adds external CSS style sheet. -->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!-- Adds external JavaScript file. -->
+    <script src="javascript/contact-me.js"></script>
+    <script src="javascript/main.js"></script>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header class="grid-header">
+        <div>
+          <!-- 
+            Title text is displayed as tooltip (on mouseover).
+            Alt text is displayed when image cannot be loaded. 
+          -->
+          <img
+            title="Tooltip: contact"
+            src="images/contact-me/contact-me.jpg"
+            alt="Desk with laptop"
+            width="1000"
+            height="300"
+          />
+        </div>
+      </header>
+
+      <!-- Navigation bar. -->
+      <nav class="grid-nav">
+        <ul>
+          <li><a href="index.html">About me</a></li>
+          <li><a href="reading.html">Reading</a></li>
+          <li>
+            <a href="first-name.html">First name - multilingual</a>
+          </li>
+          <li><a href="js-interaction.html">JavaScript interaction</a></li>
+          <li>
+            <a href="./vue-app/dist/index.html">Vue pets</a>
+          </li>
+          <li>
+            <a href="give-feedback-db.html">Give feedback</a>
+          </li>
+          <li>
+            <a class="active-page" href="contact-me.html">Contact me</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="grid-main">
+        <!-- noscript content is only displayed if JavaScript is disabled. -->
+        <noscript>
+          <strong
+            >I am sorry but this page does not work properly without JavaScript
+            enabled. Please enable it to continue.</strong
+          >
+        </noscript>
+        <h1>Contact me</h1>
+        <section>
+          <h2>Contact me form with input validation</h2>
+          <div>
+            <p id="first-name-invalid">
+              First name must consist of at least two alphabetical characters
+              (and contain no spaces)!
+            </p>
+            <p id="last-name-invalid">
+              Last name must consist of at least two alphabetical characters
+              (and contain no spaces)!
+            </p>
+            <p id="email-invalid">Please enter a valid email address!</p>
+            <p id="message-invalid">
+              Please enter your message (the message should contain at least
+              three words)!
+            </p>
+          </div>
+          <!-- HTML form. -->
+          <!-- Note, difference "name" and "id" attributes:
+          "name" is used in HTTP request sent by browser to serve as a variable name 
+          associated with data contained in "value" attribute of element.
+          The HTML "id" attribute is used to specify a unique id for an HTML element. -->
+          <!-- "for" binds label to element with same id. -->
+          <!-- Note, it is possible that 'formsubmit.co' emails end up in the spam folder. -->
+          <form
+            name="submit-form"
+            action="https://formsubmit.co/kasperza@bu.edu"
+            method="post"
+          >
+            <!-- After submitting a form the user is shown this page. -->
+            <input
+              type="hidden"
+              name="_next"
+              value="https://stefkas1.github.io/Web-Application/contact-me.html"
+            />
+            <!-- Text input. -->
+            <fieldset>
+              <legend>Name</legend>
+              <label for="first-name">First name:</label><br />
+              <input
+                type="text"
+                id="first-name"
+                name="first-name"
+                placeholder="First name"
+                required
+              /><br />
+              <label for="last-name">Last name:</label><br />
+              <input
+                type="text"
+                id="last-name"
+                name="last-name"
+                placeholder="Last name"
+                required
+              /><br />
+              <label for="email">Email:</label><br />
+              <!-- input type text instead of input type email was intentionally chosen for email
+                to show how JavaScript can be used to validate that input is a valid email. -->
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              /><br />
+              <label for="message">Your message:</label><br />
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Please enter your message here"
+                required
+              ></textarea>
+              <br />
+            </fieldset>
+            <!-- Submit button. -->
+            <input
+              class="button"
+              id="submit-button"
+              type="submit"
+              value="Submit"
+            />
+          </form>
+        </section>
+      </main>
+
+      <!-- Footer is inserted via JavaScript. -->
+      <footer class="grid-footer"></footer>
+    </div>
+  </body>
+</html>

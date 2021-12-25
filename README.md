@@ -1,0 +1,13 @@
+# Term Project - Web Application Development
+
+GitHub repository link to term project: https://github.com/StefKas1/JavaScript-CSS-HTML-Vue-Project
+<br>
+GitHub pages link to term project: https://stefkas1.github.io/JavaScript-CSS-HTML-Vue-Project/
+<br>
+GitHub user: **StefKas1**<br>
+
+This is an HTML, CSS, and JavaScript project - the frontend was implemented without frameworks (with the exception of the page **'Vue pets'**, which was implemented with the Vue.js framework to show Vue.js functionality). And in the backend, hosted on Heroku, the Express.js framework was used for Node.js to connect the frontend to a MongoDB.
+
+## Project's goal
+
+The goal of this project is to tell something about myself and to showcase what I learned in the course Web Application Development at BU. The web page **'About me'** provides general information about me and shows images of the region where I live. The **'Reading'** page gives a short list of books I would like to read. The **'First name - multilingual'** page shows how my first name is spelled in Germanic and Romance languages and contains an audio recording of how my name is pronounced in German. The **'JavaScript interaction'** page contains three interactive JavaScript applications: the first application uses alert and prompt windows to add two numbers (with input validation). The second application hides or shows explanations about the pages of this website. And the third application fetches information from the NASA API and displays the information on the page. The page **'Vue pets'** shows four images of our pets. Hovering over an image will change the image to an image of the same pet – when it was younger. And the page contains a few small interactions via input elements. The page was created with Vue.js. The **'Give feedback'** page enables the user to send feedback via form elements to Express.js / Node.js, which is hosted on Heroku, where the feedback (in JSON format) is inserted into a MongoDB. All feedback is loaded from the MongoDB and displayed on the **'Give feedback'** page, where every feedback element in the MongoDB can be deleted. The **'Contact me'** page contains a contact form which the user can use to send a message to kasperza@bu.edu using the POST method; before the web form is sent, its entries are validated via JavaScript. For sending, the message is first sent to formsubmit.co, which sends the message to kasperza@bu.edu. And all pages were implemented with the CSS Grid Layout and media queries so that the positioning of the HTML elements is adapted to the display dimensions (responsiveness).

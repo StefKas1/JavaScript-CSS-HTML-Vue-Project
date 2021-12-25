@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- Lang declares language of website. -->
+<html lang="en-US">
+  <head>
+    <!-- Meta provides information about HTML document. -->
+    <meta
+      name="description"
+      content="This page provides information about myself."
+    />
+    <meta name="keywords" content="about, me" />
+    <meta name="author" content="Stefan Kasperzack" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title is displayed in tab label of browser. -->
+    <title>About me</title>
+    <!-- Adds favicon image to tab. -->
+    <link rel="icon" type="image/png" href="images/favicon/favicon.png" />
+    <!-- Adds external CSS style sheet. -->
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!-- Adds external JavaScript file. -->
+    <script src="javascript/main.js"></script>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header class="grid-header">
+        <div>
+          <img
+            id="black-forest"
+            title="Tooltip: Black Forest"
+            src="images/index/black_forest.jpg"
+            alt="Black Forest"
+            width="1000"
+            height="300"
+          />
+        </div>
+      </header>
+
+      <!-- Navigation bar. -->
+      <nav class="grid-nav">
+        <ul>
+          <li>
+            <a class="active-page" href="index.html">About me</a>
+          </li>
+          <li><a href="reading.html">Reading</a></li>
+          <li>
+            <a href="first-name.html">First name - multilingual</a>
+          </li>
+          <li><a href="js-interaction.html">JavaScript interaction</a></li>
+          <li>
+            <a href="./vue-app/dist/index.html">Vue pets</a>
+          </li>
+          <li>
+            <a href="give-feedback-db.html">Give feedback</a>
+          </li>
+          <li>
+            <a href="contact-me.html">Contact me</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="grid-main">
+        <!-- noscript content is only displayed if JavaScript is disabled. -->
+        <noscript>
+          <strong
+            >I am sorry but this page does not work properly without JavaScript
+            enabled. Please enable it to continue.</strong
+          >
+        </noscript>
+        <h1>About me</h1>
+        <article>
+          <h2>General</h2>
+          <p>
+            My first name is Stefan (Wilhelm), but you can also call me Stephen,
+            Stephanos, Esteban or
+            <a href="first-name.html"
+              >click here for more variations of my first name.</a
+            >
+            I am from Germany and I live near the Black Forest (<a
+              href="#black-forest"
+              >see image above</a
+            >). I have an undergraduate degree in Business Administration. 
+	    In my free time I enjoy sports. My
+            friends and I regularly go running, cycling, hiking, skiing, and
+            canoeing. Outside of sports, I enjoy reading - and traveling in and
+            outside of Europe. I particularly like cultures and countries that
+            are new and unknown to me, so that I can gain new experiences.
+          </p>
+          <h2>COVID travel</h2>
+          <p>
+            International travel almost came to a standstill during COVID, so I
+            rediscovered exploring within my own region. We went to Lake
+            Constance by bike. We toured through the Black Forest. We have
+            explored the Triberg waterfalls. Hiked over the little mountain
+            Hochfirst. Explored Heidelberg's old town. And I have learned that I
+            do not always have to go far to experience new and interesting
+            things.
+          </p>
+
+          <!-- figure (semantic element) can be used to provide further information about the images
+            (diagrams, quotes, ...). -->
+          <figure>
+            <figcaption>
+              <strong
+                >Landscape images that show the southwest of Germany</strong
+              >
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              title="Tooltip: Lake Constance"
+              src="images/index/lake_constance.jpg"
+              alt="Lake Constance"
+            />
+            <figcaption>Lake Constance</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              title="Tooltip: Inside the Black Forest"
+              src="images/index/black_forest_inside.jpg"
+              alt="Inside Black Forest"
+            />
+            <figcaption>Inside Black Forest</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              title="Tooltip: Triberger waterfalls"
+              src="images/index/triberger_waterfalls.jpg"
+              alt="Triberger waterfalls"
+            />
+            <figcaption>Triberger waterfalls</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              title="Tooltip: Hochfirst"
+              src="images/index/hochfirst.jpg"
+              alt="Hochfirst"
+            />
+            <figcaption>Hochfirst</figcaption>
+          </figure>
+
+          <figure>
+            <img
+              title="Tooltip: Heidelberg - old town"
+              src="images/index/heidelberg_old_town.jpg"
+              alt="Heidelberg - old town"
+            />
+            <figcaption>Heidelberg - old town</figcaption>
+          </figure>
+        </article>
+      </main>
+
+      <!-- Footer is inserted via JavaScript -->
+      <footer class="grid-footer"></footer>
+    </div>
+  </body>
+</html>
